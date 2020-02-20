@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 
 require('dotenv').config();
 // import mongoose
@@ -21,6 +24,10 @@ mongoose.connection.on('error', err => {
 });
 
 // route middleware
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(cookieParser());
+
 app.use('/api', userRouter);
 
 const PORT = process.env.PORT || 8000;
