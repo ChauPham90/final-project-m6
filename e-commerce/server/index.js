@@ -9,7 +9,7 @@ require('dotenv').config();
 // import mongoose
 const mongoose = require('mongoose');
 // import router
-const userRouter = require('./routes/user');
+const authRouter = require('./routes/auth');
 
 //db connection
 mongoose
@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
 
-app.use('/api', userRouter);
+app.use('/api', authRouter);
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log(`app listen to ${PORT} `));
