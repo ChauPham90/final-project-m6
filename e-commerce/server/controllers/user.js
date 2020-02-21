@@ -5,6 +5,7 @@ exports.signup = (req, res) => {
     user.save((err, user) => {
         if (err) { res.status(400).json({ err }) }
         else { res.json({ user }) }
+        console.log(req.body)
     })
-    console.log(req.body)
+
 } 

@@ -6,19 +6,19 @@ const userSchema = new mongoose.Schema({
     name: {
         type: String,
         strim: true,
-        required:true
+        require: true
 
     },
     email: {
         type: String,
         strim: true,
-
+        require: true,
         unique: true
     },
     // tranfer plain text psw to hash
     hased_password: {
-        type: String
-
+        type: String,
+        require: true
     },
     about: {
         type: String,
