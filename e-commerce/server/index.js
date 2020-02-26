@@ -11,6 +11,7 @@ const mongoose = require('mongoose');
 // import router
 const authRouter = require('./routes/auth');
 const userRouter = require('./routes/user');
+const categoryRouter = require('./routes/category');
 
 //db connection
 mongoose
@@ -33,6 +34,7 @@ app.use(expressValidator());
 
 app.use('/api', authRouter);
 app.use('/api', userRouter);
+app.use('/api', categoryRouter);
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log(`app listen to ${PORT} `));
