@@ -4,8 +4,8 @@ import { API } from '../config'
 export default function Signup() {
     return (
         <Layout
-            title='Home page'
-            description='dont waste money, free video in youtube is more useful.'
+            title='signup'
+            description='After this, we can find a job with 30.000kr as least'
             children={API} />
 
     )
